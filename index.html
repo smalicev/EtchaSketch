@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+</body>
+
+<script>
+
+const content = document.querySelector('#container');
+const row = document.createElement('div')
+const column = document.createElement('div')
+row.classList.add('row');
+column.classList.add('column');
+
+function go(){
+
+for (let i = 0; i < 16; i++){
+   content.appendChild(row); 
+}
+/* cant use append child, will only do one intance, need to use clone*/
+const rows = document.querySelectorAll('.row')
+
+rows.forEach(function(row){
+for (let i = 0; i <16; i++){
+    row.appendChild(column);
+}})
+}
+
+
+</script>
+</html>
