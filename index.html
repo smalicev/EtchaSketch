@@ -5,9 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="container">
+
+        <form id="sizing">
+            <label> Enter your desired number of rows and columns:  <input type ='text'></label>
+            <button class="submit">Submit</button>
+        </form>
+        <br>
+        <button class="beg">Begin EtchaSketch!</button>
+        <br>
+        <button class='res'> Reset!</button>
+        <br>
+        <br>
 
     </div>
 </body>
@@ -17,23 +29,38 @@
 const content = document.querySelector('#container');
 const row = document.createElement('div')
 const column = document.createElement('div')
+
+const begin = document.querySelector('.beg');
+const reset = document.querySelector('.res');
 row.classList.add('row');
 column.classList.add('column');
 
-function go(){
+
+begin.addEventListener('click',function(e){
+console.log("4");
+
+    for (let i = 0; i < 16; i++){
+    let clonecolumn = column.cloneNode();
+    row.appendChild(clonecolumn); 
+}
 
 for (let i = 0; i < 16; i++){
-   content.appendChild(row); 
-}
-/* cant use append child, will only do one intance, need to use clone*/
-const rows = document.querySelectorAll('.row')
-
-rows.forEach(function(row){
-for (let i = 0; i <16; i++){
-    row.appendChild(column);
-}})
+    let clonerow = row.cloneNode(true);
+    content.appendChild(clonerow); 
 }
 
+const squares = document.querySelectorAll('.column')
+
+squares.forEach(function(column){
+column.addEventListener("mouseover", function(e){
+    event.target.style.backgroundColor = 'black';
+})});
+
+reset.addEventListener('click',function(e){
+    squares.forEach(function(column){
+    column.style.backgroundColor = '';
+})
+})});
 
 </script>
 </html>
