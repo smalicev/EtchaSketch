@@ -11,8 +11,7 @@
     <div id="container">
 
         <form id="sizing">
-            <label> Enter your desired number of rows and columns:  <input type ='text'></label>
-            <button class="submit">Submit</button>
+            <label> Enter your desired number of rows and columns:  <input type ='text' id="nosq"></label>
         </form>
         <br>
         <button class="beg">Begin EtchaSketch!</button>
@@ -37,14 +36,16 @@ column.classList.add('column');
 
 
 begin.addEventListener('click',function(e){
-console.log("4");
+const usersq = document.querySelector('#nosq').value;
+console.log(usersq);
 
-    for (let i = 0; i < 16; i++){
+
+    for (let i = 0; i < usersq; i++){
     let clonecolumn = column.cloneNode();
     row.appendChild(clonecolumn); 
 }
 
-for (let i = 0; i < 16; i++){
+for (let i = 0; i < usersq; i++){
     let clonerow = row.cloneNode(true);
     content.appendChild(clonerow); 
 }
