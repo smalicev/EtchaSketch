@@ -18,12 +18,11 @@ body{
 
 .row{
     display:flex;
-    flex: 1 1 auto;
+    flex-direction:row;
+    width: 500px;
+    height: 500px;
 }
 
 .column {
-  display:flex;
-  flex: 1 1 auto;
-  min-width: 1px;
-  min-height: 1px;
+  flex-basis: 100%;
 }
