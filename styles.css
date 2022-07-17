@@ -2,7 +2,7 @@
 body{
     display: block;
     height: 800px;
-    width: 700px;
+    width: 550px;
     margin:auto;
 }
 
@@ -14,6 +14,10 @@ body{
     align-items: center;
     height: 700px;
     flex: 1 1 auto;
+    border: 25px solid red;
+    border-radius: 65px;
+    box-shadow: -10px 10px rgba(161, 1, 1, 0.993), -10px 1px rgba(161,1,1,0.993),-10px 10px 5px black ;
+    background-color: rgba(5, 61, 5, 0.329)
 }
 
 .row{
